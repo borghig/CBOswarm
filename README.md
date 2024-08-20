@@ -1,7 +1,7 @@
 # swarmCBO
 MATLAB implementation of Consensus Based Optimization algorithms. 
 
-The repository has been created to host MATLAB code _swarmCBO_ for a flexible implementation of Consensus-Based Optimization (CBO) algorithms. The script uses the same syntax as the popular _particleswarm_, implementation of Particle Swarm Optimization (PSO), from MATLAB's Global Optimization Toolbox, allowing both algorithms to be used interchangeably.
+The repository has been created to host MATLAB code _swarmCBO_ for a flexible implementation of Consensus-Based Optimization (CBO) algorithms. The script uses the same syntax as the popular _particleswarm_, implementation of Particle Swarm Optimization (PSO), from MATLAB's Global Optimization Toolbox, so that both algorithms can be used interchangeably.
 The algorithm corresponds to an asymptotic preserving discretization of the Stochastic Differential PSO dynamics which allows to recover both the classical PSO and the first-order CBO algorithms by accurately changing the parameters.
 The repository includes illustrative examples where _swarmCBO_ is compared against _particleswarm_ on benchmark optimization problems and on the training of a high-dimensional logistic regression model. 
 
