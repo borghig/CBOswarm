@@ -1,28 +1,28 @@
-function [x,fval,exitFlag,output,points] = swarmCBO(fun, nvars, lb, ub, userOptions, userParam)
-% swarmCBO Bound constrained optimization using particle swarm optimization
+function [x,fval,exitFlag,output,points] = CBOswarm(fun, nvars, lb, ub, userOptions, userParam)
+% CBOswarm Bound constrained optimization using particle swarm optimization
 %
-%   swarmCBO attempts to solve problems of the form:
+%   CBOswarm attempts to solve problems of the form:
 %       min F(X)  subject to  LB <= X <= UB
 %        X 
 %
-%   X = swarmCBO(FUN,NVARS) finds a local unconstrained minimum X to
+%   X = CBOswarm(FUN,NVARS) finds a local unconstrained minimum X to
 %   the objective function FUN. NVARS is the dimension (number of design
 %   variables) of FUN. FUN accepts a vector X of size 1-by-NVARS and
 %   returns a scalar evaluated at X.
 %
-%   X = swarmCBO(FUN,NVARS,LB,UB) defines a set of lower and upper
+%   X = CBOswarm(FUN,NVARS,LB,UB) defines a set of lower and upper
 %   bounds on the design variables, X, so that a solution is found in the
 %   range LB <= X <= UB. Use empty matrices for LB and UB if no bounds
 %   exist. Set LB(i) = -Inf if X(i) is unbounded below; set UB(i) = Inf if
 %   X(i) is unbounded above.
 %
-%   X = swarmCBO(FUN,NVARS,LB,UB,OPTIONS) minimizes with the default
+%   X = CBOswarm(FUN,NVARS,LB,UB,OPTIONS) minimizes with the default
 %   optimization parameters replaced by values in OPTIONS, an argument
 %   created with the OPTIMOPTIONS function. See OPTIMOPTIONS for details.
 %   For a list of options accepted by swarmCBO refer to the
 %   documentation.
 %
-%   X = swarmCBO(PROBLEM) finds the minimum for PROBLEM. PROBLEM is a
+%   X = CBOswarm(PROBLEM) finds the minimum for PROBLEM. PROBLEM is a
 %   structure that has the following fields:
 %       objective: <Objective function>
 %           nvars: <Number of design variables>
@@ -31,11 +31,11 @@ function [x,fval,exitFlag,output,points] = swarmCBO(fun, nvars, lb, ub, userOpti
 %         options: <Options created with optimoptions('swarmCBO',...)>
 %        rngstate: <State of the random number generator>
 %
-%   [X,FVAL] = swarmCBO(FUN, ...) returns FVAL, the value of the
+%   [X,FVAL] = CBOswarm(FUN, ...) returns FVAL, the value of the
 %   objective function FUN at the solution X.
 %
-%   [X,FVAL,EXITFLAG] = swarmCBO(FUN, ...) returns EXITFLAG which
-%   describes the exit condition of swarmCBO. Possible values of
+%   [X,FVAL,EXITFLAG] = CBOswarm(FUN, ...) returns EXITFLAG which
+%   describes the exit condition of CBOswarm. Possible values of
 %   EXITFLAG and the corresponding exit conditions are
 %
 %     1 Relative change in best value of the objective function over
@@ -51,7 +51,7 @@ function [x,fval,exitFlag,output,points] = swarmCBO(fun, nvars, lb, ub, userOpti
 %    -5 The total time of the optimization exceeded the time limit (as
 %        specified in OPTIONS.MaxTime, in seconds).
 %
-%   [X,FVAL,EXITFLAG,OUTPUT] = swarmCBO(FUN, ...) returns a structure
+%   [X,FVAL,EXITFLAG,OUTPUT] = CBOswarm(FUN, ...) returns a structure
 %   OUTPUT with the following information:
 %      iterations: Total iterations
 %       funccount: The number of evaluations of the objective function.
@@ -59,7 +59,7 @@ function [x,fval,exitFlag,output,points] = swarmCBO(fun, nvars, lb, ub, userOpti
 %        rngstate: State of the MATLAB random number generator, just before
 %                  the algorithm started.
 %
-%   [X,FVAL,EXITFLAG,OUTPUT,POINTS] = swarmCBO(FUN, ...) also returns
+%   [X,FVAL,EXITFLAG,OUTPUT,POINTS] = CBOswarm(FUN, ...) also returns
 %   a structure containing all the swarm points and the function values at
 %   those points. POINTS has these fields:
 % 
@@ -83,14 +83,14 @@ function [x,fval,exitFlag,output,points] = swarmCBO(fun, nvars, lb, ub, userOpti
 %      nvars = 2;
 %      lb = [-64 -64];
 %      ub = [64 64];
-%      [x,fval] = swarmCBO(fcn,nvars,lb,ub)
+%      [x,fval] = CBOswarm(fcn,nvars,lb,ub)
 %
 %     Minimization of Rastrigin's function of 2 variables, with
 %     iterative display:
 %      fcn = @myRastriginsFcn;
 %      nvars = 2;
 %      options = optimoptions('swarmCBO', 'Display', 'iter');
-%      [x,fval] = swarmCBO(fcn,nvars,[],[],options)
+%      [x,fval] = CBOswarm(fcn,nvars,[],[],options)
 %
 %
 %   See also OPTIMOPTIONS, PATTERNSEARCH, GA, FMINSEARCH, @.
