@@ -6,3 +6,9 @@ The algorithm corresponds to an asymptotic preserving discretization of the Stoc
 The repository includes illustrative examples where _swarmCBO_ is compared against _particleswarm_ on benchmark optimization problems and on the training of a high-dimensional logistic regression model. 
 
 To use the algorithm _swarmCBO_, the script should be included in the _globaloptim_ MATLAB directory.
+
+-------_
+Project:
+"Realizzazione di un pacchetto software per metodi di tipo consensus based optimization (CBO) e applicazioni all’apprendimento automatico"
+Bando di selezione n.1/2024, Dip. di Matematica e Informatica, Università di Ferrara
+_
