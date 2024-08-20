@@ -19,7 +19,7 @@ function [x,fval,exitFlag,output,points] = CBOswarm(fun, nvars, lb, ub, userOpti
 %   X = CBOswarm(FUN,NVARS,LB,UB,OPTIONS) minimizes with the default
 %   optimization parameters replaced by values in OPTIONS, an argument
 %   created with the OPTIMOPTIONS function. See OPTIMOPTIONS for details.
-%   For a list of options accepted by swarmCBO refer to the
+%   For a list of options accepted by CBOswarm refer to the
 %   documentation.
 %
 %   X = CBOswarm(PROBLEM) finds the minimum for PROBLEM. PROBLEM is a
@@ -28,7 +28,7 @@ function [x,fval,exitFlag,output,points] = CBOswarm(fun, nvars, lb, ub, userOpti
 %           nvars: <Number of design variables>
 %              lb: <Lower bound on X>
 %              ub: <Upper bound on X>
-%         options: <Options created with optimoptions('swarmCBO',...)>
+%         options: <Options created with optimoptions('particleswarm',...)>
 %        rngstate: <State of the random number generator>
 %
 %   [X,FVAL] = CBOswarm(FUN, ...) returns FVAL, the value of the
