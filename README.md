@@ -7,8 +7,8 @@ The repository includes illustrative examples where _swarmCBO_ is compared again
 
 To use the algorithm _swarmCBO_, the script should be included in the _globaloptim_ MATLAB directory.
 
--------_
-Project:
-"Realizzazione di un pacchetto software per metodi di tipo consensus based optimization (CBO) e applicazioni all’apprendimento automatico"
-Bando di selezione n.1/2024, Dip. di Matematica e Informatica, Università di Ferrara
-_
+-------
+_Project:_
+_"Realizzazione di un pacchetto software per metodi di tipo consensus based optimization (CBO) e applicazioni all’apprendimento automatico"
+Bando di selezione n.1/2024, Dip. di Matematica e Informatica, Università di Ferrara_
+
